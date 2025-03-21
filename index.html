@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Fútbol</title>
+    <header class="blue darken-3 white-text center-align">
+        <h3 class="container">Resultados y Próximos Partidos</h3>
+    </header>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.tabs');
+            M.Tabs.init(elems);
+            mostrarResultadosYProximos();
+        });
+
+        function mostrarResultadosYProximos() {
+            const data = {
+                "Champions League": {
+                    ultimaFecha: [
+                    { home: "Barcelona", away: "Benfica", homeGoals: 3, awayGoals: 1 },
+                        { home: "Inter", away: "Feyenoord", homeGoals: 2, awayGoals: 1 },
+                        { home: "Liverpool", away: "PSG", homeGoals: 1, awayGoals: 1, penales: "(1-4)" },
+                        { home: "Leverkusen", away: "Bayern", homeGoals: 0, awayGoals: 2 },
+                        { home: "LOSC", away: "Dortmund", homeGoals: 1, awayGoals: 2 },
+                        { home: "Aston Villa", away: "Club Brujas", homeGoals: 3, awayGoals: 0 },
+                        { home: "Arsenal", away: "PSV", homeGoals: 2, awayGoals: 2 },
+                        { home: "Atlético Madrid", away: "Real Madrid", homeGoals: 1, awayGoals: 1, penales: "(2-4)" }
+                    ],
+                    proximaFecha: [
+                    { home: "Bayern", away: "Inter", fecha: "2025-04-08 14:00", estadio: "Allianz Arena" },
+                        { home: "Arsenal", away: "Real Madrid", fecha: "2025-04-08 14:00", estadio: "Emirates Stadium" },
+                        { home: "Barcelona", away: "Dortmund", fecha: "2025-04-09 14:00", estadio: "Spotify Camp Nou" },
+                        { home: "PSG", away: "Aston Villa", fecha: "2025-04-09 14:00", estadio: "Parc des Princes" }
+                    ]
+                },
+                "Liga Colombiana": {
+                    ultimaFecha: [
+                        { home: "Atlético Bucaramanga", away: "Deportivo Pereira", homeGoals: 0, awayGoals: 1 },
+                        { home: "Deportivo Pasto", away: "La Equidad", homeGoals: 2, awayGoals: 1 },
+                        { home: "Envigado", away: "Atlético Nacional", homeGoals: 0, awayGoals: 0 },
+                        { home: "Fortaleza CEIF", away: "Deportes Tolima", homeGoals: 1, awayGoals: 1 },
+                        { home: "América de Cali", away: "Alianza FC", homeGoals: 3, awayGoals: 0 },
+                        { home: "Once Caldas", away: "Independiente Santa Fe", homeGoals: 0, awayGoals: 1 },
+                        { home: "Millonarios", away: "Águilas Doradas", homeGoals: 1, awayGoals: 0 },
+                        { home: "Unión Magdalena", away: "Boyacá Chicó", homeGoals: 1, awayGoals: 1 },
+                        { home: "Independiente Medellín", away: "Deportivo Cali", homeGoals: 0, awayGoals: 0 },
+                        { home: "Llaneros FC", away: "Junior", homeGoals: 0, awayGoals: 1 }
+                    ],
+                    proximaFecha: [
+                    { home: "Boyacá Chicó", away: "Deportivo Pasto", fecha: "2025-03-22 14:00", estadio: "Estadio La Independencia" },
+                        { home: "La Equidad", away: "Fortaleza CEIF", fecha: "2025-03-22 16:10", estadio: "Estadio Metropolitano de Techo" },
+                        { home: "Deportivo Pereira", away: "Once Caldas", fecha: "2025-03-22 18:20", estadio: "Estadio Hernán Ramírez Villegas" },
+                        { home: "Independiente Santa Fe", away: "Millonarios", fecha: "2025-03-22 20:30", estadio: "Estadio El Campín" },
+                        { home: "Alianza FC", away: "Atlético Bucaramanga", fecha: "2025-03-23 15:30", estadio: "Estadio Daniel Villa Zapata" },
+                        { home: "Atlético Nacional", away: "Independiente Medellín", fecha: "2025-03-23 17:45", estadio: "Estadio Atanasio Girardot" },
+                        { home: "Águilas Doradas", away: "Envigado", fecha: "2025-03-23 20:00", estadio: "Estadio Alberto Grisales" },
+                        { home: "Deportes Tolima", away: "Llaneros FC", fecha: "2025-03-24 16:00", estadio: "Estadio Manuel Murillo Toro" },
+                        { home: "Deportivo Cali", away: "América de Cali", fecha: "2025-03-25 18:10", estadio: "Estadio Deportivo Cali" },
+                        { home: "Junior", away: "Unión Magdalena", fecha: "2025-03-26 20:30", estadio: "Estadio Metropolitano Roberto Meléndez" }
+                    ]
+                },
+                "Copa Libertadores": {
+                    ultimaFecha: [
+                    { home: "Atlético Mineiro", away: "Club Nacional", homeGoals: 3, awayGoals: 1 },
+                    { home: "Sporting Cristal", away: "Huracán", homeGoals: 1, awayGoals: 0 }
+                    ],
+                    proximaFecha: [
+                    { home: "Boca Juniors", away: "Palmeiras", fecha: "2025-04-02 19:00", estadio: "La Bombonera" },
+                        { home: "Flamengo", away: "River Plate", fecha: "2025-04-02 21:00", estadio: "Maracaná" },
+                        { home: "Colo Colo", away: "Independiente del Valle", fecha: "2025-04-03 18:00", estadio: "Estadio Monumental" },
+                        { home: "Corinthians", away: "Barcelona SC", fecha: "2025-04-03 20:30", estadio: "Arena Corinthians" }
+                    ]
+                }
+            };
+
+            Object.keys(data).forEach(competencia => {
+                let elementId = competencia.toLowerCase().replace(/\s+/g, '-') + "-list";
+                let html = '<h6>Última Fecha</h6>';
+                data[competencia].ultimaFecha.forEach(partido => {
+                    html += `<li class="collection-item">${partido.home} ${partido.homeGoals} - ${partido.awayGoals} ${partido.away}</li>`;
+                });
+                
+                html += '<h6>Próxima Fecha</h6>';
+                data[competencia].proximaFecha.forEach(partido => {
+                    html += `<li class="collection-item">${partido.home} vs ${partido.away} - ${partido.fecha}</li>`;
+                });
+
+                document.getElementById(elementId).innerHTML = html;
+            });
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="tabs">
+            <li class="tab col s4"><a class="active" href="#champions-league">Champions League</a></li>
+            <li class="tab col s4"><a href="#liga-colombiana">Liga Colombiana</a></li>
+            <li class="tab col s4"><a href="#copa-libertadores">Copa Libertadores</a></li>
+        </ul>
+
+        <div id="champions-league" class="col s12">
+            <h5>Partidos de Champions League</h5>
+            <ul class="collection" id="champions-league-list"></ul>
+        </div>
+        
+        <div id="liga-colombiana" class="col s12">
+            <h5>Liga Colombiana</h5>
+            <ul class="collection" id="liga-colombiana-list"></ul>
+        </div>
+        
+        <div id="copa-libertadores" class="col s12">
+            <h5>Copa Libertadores</h5>
+            <ul class="collection" id="copa-libertadores-list"></ul>
+        </div>
+    </div>
+</body>
+</html>
