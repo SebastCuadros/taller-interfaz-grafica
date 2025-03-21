@@ -1,4 +1,18 @@
-# taller-interfaz-grafica
+<<<<<<<
+Mi Aplicación Web
+Esta es una aplicación web desarrollada con HTML5, siguiendo los principios de usabilidad y accesibilidad de Material Design.
+Mapa de Navegación
+=======
+# 📌 Mi Aplicación Web
+
+Esta es una aplicación web desarrollada con **HTML5**, siguiendo los principios de usabilidad y accesibilidad de **Material Design**.
+
+---
+
+## 🚀 Mapa de Navegación
+
+```plaintext
+>>>>>>>
 Inicio
 │
 ├── Header: "Resultados y Próximos Partidos"
